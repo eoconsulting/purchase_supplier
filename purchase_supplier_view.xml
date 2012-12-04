@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<openerp>
+	<data>
+		<record model="ir.ui.view" id="purchase_supplier_view">
+			<field name="name">purchase.order.line.form</field>
+			<field name="model">purchase.order.line</field>
+			<field name="type">form</field>
+			<field name="inherit_id" ref="purchase.purchase_order_line_form" />
+			<field name="arch" type="xml">
+				<field name="product_id" position="replace">
+					<field name="product_id" colspan="4"
+						on_change="onchange_product_id(parent.pricelist_id,product_id,product_qty,product_uom,parent.partner_id, parent.date_order,parent.fiscal_position,date_planned,name,price_unit,notes,context)"
+						context="{'partner_id':parent.partner_id, 'quantity':product_qty, 'pricelist':parent.pricelist_id, 'uom':product_uom, 'warehouse':parent.warehouse_id}"
+						domain="[('seller_ids','=',parent.partner_id)]"
+						required="1"/>
+				</field>
+			</field>
+		</record>
+
+        <record model="ir.ui.view" id="product_supplierinfo_tree_view_inherit_product_details">
+            <field name="name">product.supplierinfo.tree.view</field>
+            <field name="model">product.supplierinfo</field>
+            <field name="inherit_id" ref="product.product_supplierinfo_tree_view"/>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+            	<xpath expr="/tree/field[@name='name']" position="after">
+	                <field name="product_code" />
+	                <field name="product_name"/>
+                </xpath>
+            </field>
+        </record>
+	</data>
+</openerp>
