@@ -2,9 +2,7 @@
 ##############################################################################
 #
 #    Copyright (C) Javier Duran
-#                  Enterprise Objects Consulting
-#
-#    Author: Mariano Ruiz <mrsarm@gmail.com>
+#                  Mariano Ruiz (Enterprise Objects Consulting)
 #
 #    This program is free software: you can redistribute it and/or modify
 #    it under the terms of the GNU Affero General Public License as published by
