@@ -40,7 +40,7 @@ class product_product(osv.osv):
 					'INNER JOIN product_template AS t ' \
 					'ON p.product_tmpl_id=t.id ' \
 					'INNER JOIN product_supplierinfo AS ps ' \
-					'ON ps.product_id=p.id ' \
+					'ON ps.product_id=t.id ' \
 					'WHERE ps.name = %s ' \
 					'AND ps.product_code = %s ' \
 					'AND t.purchase_ok = True ' \
@@ -54,7 +54,7 @@ class product_product(osv.osv):
 					'INNER JOIN product_template AS t ' \
 					'ON p.product_tmpl_id=t.id ' \
 					'INNER JOIN product_supplierinfo AS ps ' \
-					'ON ps.product_id=p.id ' \
+					'ON ps.product_id=t.id ' \
 					'WHERE ps.name = %s ' \
 					'AND ps.product_name = %s ' \
 					'AND t.purchase_ok = True ' \
@@ -68,7 +68,7 @@ class product_product(osv.osv):
 					'INNER JOIN product_template AS t ' \
 					'ON p.product_tmpl_id=t.id ' \
 					'INNER JOIN product_supplierinfo AS ps ' \
-					'ON ps.product_id=p.id ' \
+					'ON ps.product_id=t.id ' \
 					'WHERE ps.name = %s ' \
 					'AND p.ean13 = %s ' \
 					'AND t.purchase_ok = True ' \
@@ -84,7 +84,7 @@ class product_product(osv.osv):
 					'INNER JOIN product_template AS t ' \
 					'ON p.product_tmpl_id=t.id ' \
 					'INNER JOIN product_supplierinfo AS ps ' \
-					'ON ps.product_id=p.id ' \
+					'ON ps.product_id=t.id ' \
 					'WHERE ps.name = %s ' \
 					'AND ps.product_code '+operator+' %s ' \
 					'AND t.purchase_ok = True ' \
@@ -98,7 +98,7 @@ class product_product(osv.osv):
 					'INNER JOIN product_template AS t ' \
 					'ON p.product_tmpl_id=t.id ' \
 					'INNER JOIN product_supplierinfo AS ps ' \
-					'ON ps.product_id=p.id ' \
+					'ON ps.product_id=t.id ' \
 					'WHERE ps.name = %s ' \
 					'AND ps.product_name '+operator+' %s ' \
 					'AND t.purchase_ok = True ' \
@@ -114,7 +114,7 @@ class product_product(osv.osv):
 					'INNER JOIN product_template AS t ' \
 					'ON p.product_tmpl_id=t.id ' \
 					'INNER JOIN product_supplierinfo AS ps ' \
-					'ON ps.product_id=p.id ' \
+					'ON ps.product_id=t.id ' \
 					'WHERE ps.name = %s ' \
 					'AND p.default_code '+operator+' %s ' \
 					'AND t.purchase_ok = True ' \
@@ -128,7 +128,7 @@ class product_product(osv.osv):
 					'INNER JOIN product_template AS t ' \
 					'ON p.product_tmpl_id=t.id ' \
 					'INNER JOIN product_supplierinfo AS ps ' \
-					'ON ps.product_id=p.id ' \
+					'ON ps.product_id=t.id ' \
 					'WHERE ps.name = %s ' \
 					'AND t.name '+operator+' %s ' \
 					'AND t.purchase_ok = True ' \
