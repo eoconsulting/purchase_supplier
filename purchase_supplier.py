@@ -146,6 +146,7 @@ class product_product(osv.osv):
 		if not len(ids):
 			ids = self.search(cr, user, [('default_code',operator,name)]+ args, limit=limit, context=context)
 			ids += self.search(cr, user, [('name',operator,name)]+ args, limit=limit, context=context)
+			ids = list(set(ids))
 		result = self.name_get(cr, user, ids, context)
 		return result
 
