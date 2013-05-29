@@ -20,13 +20,22 @@
 ##############################################################################
 
 {
-	"name" : "Purchase extension to search or filter by supplier the products in the purchase order lines",
-	"version" : "0.1",
+	"name" : "Filter by supplier the products in the Purchase Order",
+	"version" : "0.1.1",
 	"author" : "Javier Duran, Enterprise Objects Consulting",
-	"depends" : ["product", "purchase"],
-	"description": """Allow to limit available selection of Products in a Purchase Order only to those products that are supplied by selected supplier,
-	and find them by supplier product name or supplier product code.""",
 	"website" : "http://www.eoconsulting.com.ar",
+	"depends" : ["product", "purchase"],
+	"description": """
+Allow to limit available selection of Products
+in a Purchase Order only to those products that are supplied by selected supplier,
+and find them by supplier product name or supplier product code.
+
+If even a product does not match with the keyword entered in the filter field,
+then all product that match with the query are displayed.
+
+Also note that this module apply this filters only in the search widget,
+not in the search view.
+""",
 	"category" : "Purchase Management",
 	"init_xml" : [],
 	"demo_xml" : [],
