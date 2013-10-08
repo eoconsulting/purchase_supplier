@@ -1,6 +1,8 @@
 Purchase Supplier Extension
 ===========================
 
+**This project has been moved to https://launchpad.net/~eoc**
+
 This OpenERP module allow to limit available selection of Products
 in a Purchase Order only to those products that are supplied by selected supplier,
 and find them by supplier product name or supplier product code.
